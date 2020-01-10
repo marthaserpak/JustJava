@@ -4,14 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-
-import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int quantity ;
+    private int quantity;
+    private int price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,39 +18,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        /*display(quantity);
-        displayPrice(quantity * 10);*/
-        String priceMassage = "Total price: " + "$" + quantity*8
-              +  "\nThank you!";
+        int price = calculatePrice();
+        String priceMassage = createOrderSummary(price);
         displayMassage(priceMassage);
     }
 
-    private void display(int number) {
+    private String createOrderSummary(int price) {
+        String priceMassage =
+                "Name: Marta";
+        priceMassage += priceMassage + "\nQuantitty: " + quantity;
+        priceMassage += priceMassage + "\nTotal price: " + "$" + price;
+        priceMassage += priceMassage + "\nThank you!";
+
+        return priceMassage;
+    }
+
+    private int calculatePrice() {
+        return quantity * 5;
+    }
+
+    private void displayQuantity(int number) {
         TextView quantityView = findViewById(R.id.quantity_text_view);
         quantityView.setText("" + number);
     }
 
-    private void displayPrice(int number) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance()
-                .format(number));
-    }
-
     private void displayMassage(String message) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = findViewById(R.id.ORDER_SUMMARY_TEXT_VIEW);
+        orderSummaryTextView.setText(message);
     }
 
     public void increment(View view) {
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     public void decrement(View view) {
-        if(quantity == 0) {
+        if (quantity == 0) {
             return;
         }
         quantity = quantity - 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 }
