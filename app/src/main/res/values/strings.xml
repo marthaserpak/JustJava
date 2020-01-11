@@ -7,4 +7,7 @@
     <string name="display_price">$0</string>
     <string name="plus">+</string>
     <string name="mines">-</string>
+    <string name="whippedCream">Whipped Cream</string>
+    <string name="toppings">TOPPINGS</string>
+    <string name="chocolate">Chocolate</string>
 </resources>
