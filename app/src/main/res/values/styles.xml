@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyFirstTheme" >
+        <item name="android:textAllCaps"/>
+        <item name="android:textSize">25sp</item>
+        <item name="android:colorBackground">#FFAA99</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_margin">12dp</item>
+    </style>
+
 </resources>

@@ -10,4 +10,6 @@
     <string name="whippedCream">Whipped Cream</string>
     <string name="toppings">TOPPINGS</string>
     <string name="chocolate">Chocolate</string>
+    <string name="name">Your Name</string>
+
 </resources>
